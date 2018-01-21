@@ -4,24 +4,29 @@ namespace FormBuilder;
 use \OCFram\FormBuilder;
 use \OCFram\StringField;
 use \OCFram\TextField;
+use \OCFram\MenuField;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
- 
-class CommentFormBuilder extends FormBuilder
+
+class SearchFormBuilder extends FormBuilder
 {
+  
   public function build()
   {
-    $this->form->add(new StringField([
-        'label' => 'Auteur',
-        'name' => 'auteur',
-        'maxLength' => 50,
+    $this->form
+    
+       ->add(new MenuField([
+        'label' => 'départ',
+        'name' => 'contenu',
+        'rows' => 7,
+        'cols' => 150,
         'validators' => [
-          new MaxLengthValidator('L\'auteur spécifié est trop long (50 caractères maximum)', 50),
-          new NotNullValidator('Merci de spécifier l\'auteur du commentaire'),
+          new NotNullValidator('Merci de spécifier votre commentaire'),
         ],
        ]))
-       ->add(new TextField([
-        'label' => 'Contenu',
+       
+       ->add(new MenuField([
+        'label' => 'arrivée',
         'name' => 'contenu',
         'rows' => 7,
         'cols' => 150,
@@ -29,5 +34,46 @@ class CommentFormBuilder extends FormBuilder
           new NotNullValidator('Merci de spécifier votre commentaire'),
         ],
        ]));
+  
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
