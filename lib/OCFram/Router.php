@@ -1,5 +1,4 @@
- <?php
-namespace OCFram;
+<?php namespace OCFram;
  
 class Router
 {
